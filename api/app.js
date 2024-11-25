@@ -12,9 +12,10 @@ const PORT = process.env.PORT || 3000;
 
 // Configuração do CORS
 app.use(cors({
-    origin: 'https://desafio-trindtech.vercel.app', // Permitir apenas esse domínio
+    origin: process.env.FRONTEND_URL || '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
-    allowedHeaders: ['Content-Type', 'Authorization'] // Cabeçalhos permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos
+    credentials: true
 }));
 
 app.use(express.json()); // Para permitir o recebimento de JSON no corpo das requisições
@@ -39,5 +40,5 @@ if (process.env.NODE_ENV === 'development') {
 
 // Inicializar o servidor
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}. Documentação disponível em http://localhost:3000/docs ou https://desafio-trindtech.vercel.app/docs`);
+    console.log(`Servidor rodando na porta ${PORT} no ambiente ${process.env.NODE_ENV || 'desconhecido'}. Documentação disponível em /docs.`);
 });
