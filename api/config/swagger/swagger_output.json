@@ -5,10 +5,10 @@
     "version": "1.0.0",
     "description": "API com endpoints REST para CRUD de cursos e alunos."
   },
-  "host": "localhost:3000",
+  "host": "desafio-trindtech-backend-production.up.railway.app",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api/students/": {

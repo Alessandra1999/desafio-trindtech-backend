@@ -9,8 +9,8 @@ const doc = {
     version: "1.0.0",
     description: "API com endpoints REST para CRUD de cursos e alunos.",
   },
-  host,
-  schemes: [schemes],
+  host: "desafio-trindtech-backend-production.up.railway.app",
+  schemes: ["https"],
 };
 
 // Gera automaticamente o arquivo swagger_output.json
